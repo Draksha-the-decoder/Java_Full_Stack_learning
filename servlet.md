@@ -123,12 +123,14 @@ public class HelloServlet extends GenericServlet {
 
 Note
 ----
+```
 interface HttpServletRequest extends ServletRequest {}
 interface HttpServletResponse extends ServletResponse {}
+```
 
 Note
 ----
-class to class => extends
-class to interface => implements
-interface to interface => extends
-interface to class => error
+ - class to class => extends
+ - class to interface => implements
+ - interface to interface => extends
+ - interface to class => error
