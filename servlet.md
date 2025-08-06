@@ -69,7 +69,7 @@ Servlets are **Java programs** used to create **server-side dynamic web applicat
 
 ![Servlet Architecture](./Servlet_Architecture.png)
 
-HttpServlet is declared abstact inspite of not having any abstract method so that its object cannot be created, it can only be implemented or extended.
+ - HttpServlet is declared abstact inspite of not having any abstract method so that its object cannot be created, it can only be implemented or extended.
 ---
 
 ## 🔁 Servlet Life Cycle
