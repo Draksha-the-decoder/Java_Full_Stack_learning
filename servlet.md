@@ -8,13 +8,11 @@ Java EE (Java Enterprise Edition) is a set of specifications and APIs used to de
 
 ### 1. Web Components
 Used to develop **web applications**.
-
 - **Servlets**
 - **JSP (Java Server Pages)**
 
 ### 2. Enterprise Components
 Used to develop **enterprise applications** (distributed, secured, and transactional).
-
 - **EJB (Enterprise Java Beans)**
 
 ---
@@ -63,10 +61,6 @@ These technologies are commonly used to develop dynamic content on the server si
 
 Servlets are **Java programs** used to create **server-side dynamic web applications**.
 
----
-
-## 📊 Servlet Architecture & Hierarchy
-
 ### Servlet Hierarchy
 
 ![Servlet Hierarchy](./Servlet_Hierarchy.png)
@@ -75,6 +69,7 @@ Servlets are **Java programs** used to create **server-side dynamic web applicat
 
 ![Servlet Architecture](./Servlet_Architecture.png)
 
+HttpServlet is declared abstact inspite of not having any abstract method so that its object cannot be created, it can only be implemented or extended.
 ---
 
 ## 🔁 Servlet Life Cycle
@@ -94,9 +89,6 @@ The life cycle of a servlet is managed by the **Servlet Container** and involves
 ### 1. Extending `GenericServlet` class
 
 ```java
-import javax.servlet.*;
-import java.io.*;
-
 public class HelloServlet extends GenericServlet {
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
         // Handle the request
@@ -107,30 +99,29 @@ public class HelloServlet extends GenericServlet {
 ### 1. Extending `GenericServlet` class
 
 ```java	
-2. By creating a class which extends HttpServlet class
-    public class HelloServlet extends HttpServlet
+public class HelloServlet extends HttpServlet
+{
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-        {
-	        //handle the request
-        }
-        public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-        {
-	        //handle the request
-        }
+        //handle the request
     }
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        //handle the request
+    }
+}
 ```
 
 Note
 ----
-```
+```java
 interface HttpServletRequest extends ServletRequest {}
 interface HttpServletResponse extends ServletResponse {}
 ```
-
-Note
-----
  - class to class => extends
  - class to interface => implements
  - interface to interface => extends
  - interface to class => error
+
+---
+
